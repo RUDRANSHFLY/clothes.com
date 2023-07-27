@@ -1,0 +1,15 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background: blueviolet;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h1{
+    text-align: center;
+}
