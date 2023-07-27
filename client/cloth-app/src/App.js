@@ -1,23 +1,15 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
+import {RouterProvider} from "react-router-dom";
+import Root from "./routes/Root.js";
 
 
 
-
-const router = createBrowserRouter([
-    {
-        path : "/" ,
-        element : <Root />,
-    },
-]);
+const router = Root();
 
 
 function App() {
     return (
         <div>
-            <ReactProvider router={router} />
+            <RouterProvider router={router} />
         </div>
     );
 }
