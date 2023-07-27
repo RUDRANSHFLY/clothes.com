@@ -3,22 +3,28 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
+
+import Home from '../pages/Home/Home.jsx';
+import Product from '../pages/Product/Product.jsx';
+import Products from '../pages/Products/Products.jsx';
+
+
 function Root() {
     const router = createBrowserRouter([
         {
             path : "/",
-            element : <h1> Home </h1>
+            element : <Home />
+        },
+        
+        {
+            path : "/product/:id",
+            element : <Product />
         },
 
         {
             path : "/products/:id",
-            element : <h1> Products </h1>
+            element : <Products />
         },
-
-        {
-            path : "/product/:id",
-            element : <h1> Product </h1>
-        }
     ])
     return router
 }
