@@ -34,7 +34,7 @@ const Slider = () => {
     "https://images.pexels.com/photos/17299829/pexels-photo-17299829/free-photo-of-photo-of-a-woman-holding-a-baby-girl-wearing-a-pink-bow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/4667543/pexels-photo-4667543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/7872818/pexels-photo-7872818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/17290214/pexels-photo-17290214/free-photo-of-brunette-in-long-summer-dress.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/10545016/pexels-photo-10545016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/9256867/pexels-photo-9256867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/10130500/pexels-photo-10130500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/6770026/pexels-photo-6770026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
