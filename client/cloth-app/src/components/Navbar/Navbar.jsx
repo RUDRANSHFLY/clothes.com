@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 
@@ -13,9 +14,14 @@ import
     faCartShopping
 } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.scss";
+import Cart from '../Cart/Cart';
+
 
 
 const Navbar = () => {
+
+  const [open, setopen] = useState(false);
+
   return (
     <div className='navbar'>
       <div className='wrapper'>
@@ -59,12 +65,13 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faUser}/>
                     <FontAwesomeIcon icon={faHeart}/>
                     <div className='cartIcon'>
-                        <FontAwesomeIcon icon={faCartShopping}/>
+                        <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)}/>
                         <span className='span'>0</span>
                     </div>
                 </div>
             </div>
       </div>
+      {open && <Cart/>}
     </div>
   )
 };
