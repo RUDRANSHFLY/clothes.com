@@ -4,9 +4,10 @@ import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts
 import TrendingProducts from '../../components/TrendingProducts/TrendingProducts.jsx';
 import Categories from '../../components/Categories/Categories.jsx';
 import Contact from '../../components/Contact/Contact.jsx';
+import "../Home/Home.scss"
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
        <Slider/>
        <FeaturedProducts type='featured'/>
        <Categories/>
