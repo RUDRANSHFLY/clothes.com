@@ -58,6 +58,56 @@
       "relation": "manyToMany",
       "target": "api::sub-category.sub-category",
       "mappedBy": "products"
+    },
+    "img3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "img4": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "oldprice": {
+      "type": "decimal"
+    },
+    "inSale": {
+      "type": "boolean",
+      "default": false
+    },
+    "img5": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "normal",
+        "featured",
+        "trending",
+        "comics",
+        "new edition"
+      ]
     }
   }
 }

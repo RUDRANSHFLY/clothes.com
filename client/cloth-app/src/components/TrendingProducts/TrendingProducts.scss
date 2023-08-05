@@ -26,6 +26,8 @@
 
     .bottom{
         display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 70px;
         color: black;

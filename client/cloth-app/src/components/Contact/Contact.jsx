@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <div className='contact'>
         <div className="left">
-            <img src="https://images.pexels.com/photos/1183454/pexels-photo-1183454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcset="" />
+            <img src="https://images.pexels.com/photos/1183454/pexels-photo-1183454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" srcSet="" />
         </div>
         
         <div className="right">
