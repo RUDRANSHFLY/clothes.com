@@ -43,7 +43,7 @@ const TrendingProducts = ({type}) => {
 
     //     {
     //         id: 8 ,
-    //         img : "https://images.pexel  s.com/photos/17683998/pexels-photo-17683998/free-photo-of-young-elegant-woman-posing-in-the-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //         img : "https://images.pexels.com/photos/17683998/pexels-photo-17683998/free-photo-of-young-elegant-woman-posing-in-the-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     //         img2 : "https://images.pexels.com/photos/17683996/pexels-photo-17683996/free-photo-of-young-elegant-woman-posing-in-the-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     //         title: "Adventorus",
     //         isNew: true,

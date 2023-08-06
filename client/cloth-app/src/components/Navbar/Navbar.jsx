@@ -35,13 +35,13 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faCaretDown} />
                 </div>
                 <div className='item'>
-                    <Link className='link' to='/products/1'>Men</Link>
+                    <Link className='link' to='/products/3/'>Men</Link>
                 </div>
                 <div className='item'>
-                    <Link className='link' to='/products/2'>Women</Link>
+                    <Link className='link' to='/products/2/'>Women</Link>
                 </div>
                 <div className='item'>
-                    <Link className='link' to='/products/3'>Children</Link>
+                    <Link className='link' to='/products/1/'>Children</Link>
                 </div>
             </div>
             <div className='center'>
