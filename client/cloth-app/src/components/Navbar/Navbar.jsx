@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {products} from "../../redux/cartReducer.js"
 import 
 {
     faUser,
@@ -15,13 +16,14 @@ import
 } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.scss";
 import Cart from '../Cart/Cart';
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector.js';
 
 
 
 const Navbar = () => {
 
   const [open, setopen] = useState(false);
-
+  const products = useSelector((state) => state.cart.products)
   return (
     <div className='navbar'>
       <div className='wrapper'>
@@ -66,7 +68,7 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faHeart}/>
                     <div className='cartIcon'>
                         <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)}/>
-                        <span className='span'>0</span>
+                        <span className='span'>{products.length}</span>
                     </div>
                 </div>
             </div>

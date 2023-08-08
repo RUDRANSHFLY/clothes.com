@@ -1,11 +1,8 @@
 import React from 'react'
 import "../TrendingProducts/TrendingProducts.scss";
 import Card from '../Card/Card.jsx';
-import { 
-    useState,
-    useEffect,
- } from 'react';
-import axios from 'axios';
+import useFetch from '../../hooks/useFetch.js';
+import Loading from '../Loading/Loading.jsx';
 const TrendingProducts = ({type}) => {
 
 
@@ -56,25 +53,7 @@ const TrendingProducts = ({type}) => {
     // ] 
 
 
-    const [data, setdata] = useState([]);
-  
-    useEffect(() => {
-          const fetchData = async ()=> {
-              try {
-                  const res = await axios.get(process.env.REACT_APP_API_URL+"/products?populate=*",{
-                     headers : {
-                      authorization : "bearer "+process.env.REACT_APP_API_TOKEN,
-                     },
-                  });
-                  console.log(res.data.data);
-                 setdata(res.data.data);
-              } catch (error) {
-                  console.log(error);
-              }
-          }
-          fetchData();    
-    }, []);
-    
+    const {data,loading,error} = useFetch(`/products?populate=*&[filters][type][$eq]=${type}`);
 
 
 
@@ -88,9 +67,10 @@ const TrendingProducts = ({type}) => {
             </div>
             
             <div className="bottom">
-                {data.map(i =>(
-                    <Card item={i} key={i.id}/>
-                ))} 
+                {loading ? Loading : data.map(i =>(
+                                         <Card item={i} key={i.id}/>
+                                     ))
+                } 
             </div>
     </div>
   )

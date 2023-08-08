@@ -1,70 +1,136 @@
-import React from 'react';
+import React from "react";
 import "../Product/Product.scss";
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHeart,
-}from '@fortawesome/free-regular-svg-icons'
-import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
-
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router";
+import Loading from "../../components/Loading/Loading";
+import useFetch from "../../hooks/useFetch.js";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartReducer.js";
 
 const Product = () => {
-
-  const [selectImg , setselectImg] = useState(0);
+  const id = useParams().id;
+  const [selectImg, setselectImg] = useState("img");
   const [quantity, setquantity] = useState(1);
 
-  const data = [
-    "https://images.pexels.com/photos/1493111/pexels-photo-1493111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1076598/pexels-photo-1076598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1070745/pexels-photo-1070745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/874142/pexels-photo-874142.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  ]
 
 
+  const dispatch = useDispatch()
+  const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  const img = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img?.data?.attributes?.url;
+  const img2 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img2?.data?.attributes?.url;
+  const img3 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img3?.data?.attributes?.url;
+  const img4 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img4?.data?.attributes?.url;
+  const img5 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img5?.data?.attributes?.url;
+
+  
   return (
-    <div className='product'>
-        <div className="left">
+    <div className="product">
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <div className="left">
             <div className="images">
-              <img src={data[0]} alt="" srcset="" onClick={e=>setselectImg(0)} />
-              <img src={data[1]} alt="" srcset="" onClick={e=>setselectImg(1)} />
-              <img src={data[2]} alt="" srcset="" onClick={e=>setselectImg(2)} />
-              <img src={data[3]} alt="" srcset="" onClick={e=>setselectImg(3)} />
-              <img src={data[4]} alt="" srcset="" onClick={e=>setselectImg(4)} />
+               <img
+                src={img}
+                alt=""
+                srcSet=""
+                onClick={(e) => setselectImg("img")}
+              />
+
+              <img
+                src={img2}
+                alt=""
+                srcSet=""
+                onClick={(e) => setselectImg("img2")}
+              />
+
+              <img
+                src={img3}
+                alt=""
+                srcSet=""
+                onClick={(e) => setselectImg("img3")}
+              />
+
+
+              <img
+                src={img4}
+                alt=""
+                srcSet=""
+                onClick={(e) => setselectImg("img4")}
+              />
+               
+
+               <img
+                src={img5}
+                alt=""
+                srcSet=""
+                onClick={(e) => setselectImg("img5")}
+              />
+           
+
+           
+            
             </div>
-            <div className="mainImg">
-              <img src={data[selectImg]} alt="" srcset="" />
-            </div>
-        </div>
-        <div className="right">
-            <h1>Black Plan Tshirt</h1>
-            <span className='price'>${(599 * quantity)}</span>
-              <p>
-                this is item description and this is demo for this prodcut to tesst it 
-              </p>
+              <div className="mainImg">
+                  <img src={process.env.REACT_APP_UPLOAD_URL+ data?.attributes?.[selectImg]?.data?.attributes?.url} alt="" srcSet="" />
+              </div>
+          </div>
+          <div className="right">
+            <h1>{data?.attributes?.title}</h1>
+            <span className="price">$ {data?.attributes?.price * quantity}</span>
+            <p>
+             {
+              data?.attributes?.desc
+             }
+            </p>
             <div className="size">
-              <h2>SELECT SIZE</h2> 
+              <h2>SELECT SIZE</h2>
               <h3>Size Chart</h3>
             </div>
             <div className="sizes">
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
-                <button>XL</button>
-                <button>XLL</button>
-              </div>
-              
-              <div className='quantity'>
-                <button onClick={()=>setquantity((prev) => (prev===1 ? 1 : prev - 1 ) )}>-</button>
-                {quantity}
-                <button onClick={()=>setquantity((prev) =>prev+1)}>+</button>
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+              <button>XL</button>
+              <button>XLL</button>
+            </div>
+
+            <div className="quantity">
+              <button
+                onClick={() =>
+                  setquantity((prev) => (prev === 1 ? 1 : prev - 1))
+                }
+              >
+                -
+              </button>
+              {quantity}
+              <button onClick={() => setquantity((prev) => prev + 1)}>+</button>
             </div>
             <div className="buttons">
-              <button id='wishlist'>Add To WishList <FontAwesomeIcon icon={faHeart}/></button>
-              <button id='cart'>Add To Cart <FontAwesomeIcon icon={faCartShopping}/></button>
+              <button id="wishlist">
+                Add To WishList <FontAwesomeIcon icon={faHeart} />
+              </button>
+              <button id="cart" onClick={
+                () => dispatch(
+                  addToCart({
+                    id : data.id,
+                    title : data.attributes.title ,
+                    desc : data.attributes.desc,
+                    price : data.attributes.price,
+                    img : data.attributes.img.data.attributes.url,
+                    quantity,
+                    })
+                  )
+              }>
+                Add To Cart <FontAwesomeIcon icon={faCartShopping} />
+              </button>
             </div>
             <div className="buyButton">
-                <button>Buy Now</button>
+              <button>Buy Now</button>
             </div>
             <div className="info">
               <span>Vendor : Polo</span>
@@ -79,9 +145,11 @@ const Product = () => {
                 <span>FAQ</span>
               </div>
             </div>
-        </div>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 };
 
 export default Product;
