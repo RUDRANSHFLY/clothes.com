@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usercloths",
+  "info": {
+    "singularName": "usercloth",
+    "pluralName": "usercloths",
+    "displayName": "usercloth",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "text"
+    }
+  }
+}
