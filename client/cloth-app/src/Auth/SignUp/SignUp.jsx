@@ -5,9 +5,11 @@ import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import auth from '../auth.js';
 import { useState } from 'react';
-
+import { useHistory } from 'react-router-use-history'
 const SignUp = () => {
-  
+
+
+  const history = useHistory();
 
   const [data, setdata] = useState({
     username : '',
@@ -24,6 +26,7 @@ const SignUp = () => {
 
   const handle = (e) => {
     auth(data);
+    history.push("/auth/sign-in");
     e.preventDefault();
   }
   
@@ -42,19 +45,19 @@ const SignUp = () => {
               <label htmlFor="username">
                 Username
                 <br />
-                <input onChange={inputHandle}  type="text" value={data.username} name="username" id="username" />
+                <input onChange={inputHandle} autocomplete='username'  type="text" value={data.username} name="username" id="username" />
               </label>
               <br />
               <label htmlFor="email">
                 Email
                 <br />
-                <input value={data.email} onChange={inputHandle}  type="email" name="email" id="email" />
+                <input value={data.email} autocomplete='email' onChange={inputHandle}  type="email" name="email" id="email" />
               </label>
               <br />
               <label  htmlFor="Password">
                 Password
                 <br />
-                <input value={data.password}  onChange={inputHandle}  type="password" name="password" id="password" />
+                <input value={data.password} autocomplete="current-password" onChange={inputHandle}  type="password" name="password" id="password" />
               </label>
               <br />
               <button type="submit">Create account</button>

@@ -1,10 +1,55 @@
 import React from 'react'
+import { useState } from 'react';
 import "../SignIn/SignIn.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import signauth from '../signauth.js';
+import { useHistory } from 'react-router-use-history';
 
-const SignIn = () => {
+
+let isAuth = false ; 
+  function setAuth(auth) {
+    isAuth = auth ;
+  }
+
+  export function getAuth() {
+    return isAuth;
+  }
+
+const SignIn =  () => {
+
+
+  const history = useHistory();
+  const [auth, setauth] = useState(false);
+ 
+
+  const [data, setdata] = useState({
+    username : '',
+    password: '',
+  });
+
+
+  const inputHandle = (e) => {
+      const name = e.target.name;
+      const value = e.target.value;
+      setdata({...data,[name]:value})
+  }
+
+  async function handle(e){
+      e.preventDefault();
+      const r = await signauth(data);
+        if(r == false){
+          history.push("/auth/sign-up/");
+        }else{
+          history.push("/");
+          setAuth(true);
+        } 
+   } 
+  
+
+
+
   return (
     <div>
         <div className='signin'>
@@ -16,17 +61,17 @@ const SignIn = () => {
               <h1>Welcome Back </h1>
               <h4>Welcome Back ! Please Enter your Details</h4>
             </div>
-            <form action="" method="get">
+            <form onSubmit={(e) => handle(e)}>
               <label htmlFor="username">
                 Username
                 <br />
-                <input type="text" name="username" id="username" />
+                <input onChange={inputHandle} value={data.username} type="text" name="username" id="username" />
               </label>
               <br />
               <label htmlFor="Password">
                 Password
                 <br />
-                <input type="password" name="password" id="password" />
+                <input onChange={inputHandle} value={data.password} type="password" name="password" id="password" />
               </label>
               <br />
               <button type="submit">Sign-In</button>
