@@ -96,7 +96,7 @@ const Products = () => {
         </div>
 
       </div>
-        <div className="right">
+      <div className="right">
           <img
             className="catImg"
             src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -104,7 +104,7 @@ const Products = () => {
             srcset=""
           />
           <List catId={catId} maxPrice={maxPrice} sortPrice={sort} subCat={selectsubCat}/>
-        </div>
+      </div>
     </div>
   );
 };

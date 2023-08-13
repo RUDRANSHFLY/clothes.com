@@ -1,6 +1,5 @@
 import React from 'react'
 import "../Cart/Cart.scss"
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import {useSelector} from 'react-redux'

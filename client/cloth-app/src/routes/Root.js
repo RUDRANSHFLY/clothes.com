@@ -1,6 +1,7 @@
 import {
     createBrowserRouter,
     Outlet,
+    RouterProvider,
 } from "react-router-dom";
 
 
@@ -12,7 +13,12 @@ import Products from '../pages/Products/Products.jsx';
 import Navbar from "../components/Navbar/Navbar.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
+
+import SignIn from "../Auth/SignIn/SignIn.jsx";
+import SignUp from "../Auth/SignUp/SignUp.jsx";
+
 import '../App.scss'
+
 
 
 function layout(){
@@ -28,6 +34,7 @@ function layout(){
 
 
 function Root() {
+   
     const router = createBrowserRouter([
         {
             path : "/" ,
@@ -48,6 +55,20 @@ function Root() {
                     element : <Products />
                 },
             ]
+        },
+        {
+            path : "/auth",
+            children : [
+                {
+                    path : "/auth/sign-in",
+                    element: <SignIn/>,
+                },
+                {
+                    path : "/auth/sign-up",
+                    element: <SignUp/>
+                },
+            ]
+            
         },
     ]);
     return router
