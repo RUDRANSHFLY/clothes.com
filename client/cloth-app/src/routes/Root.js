@@ -6,6 +6,7 @@ import {
 
 
 import Home from '../pages/Home/Home.jsx';
+import AboutUs from "../pages/AboutUs/AboutUs.jsx";
 import Product from '../pages/Product/Product.jsx';
 import Products from '../pages/Products/Products.jsx';
 
@@ -54,6 +55,11 @@ function Root() {
                     path : "/products/:id",
                     element : <Products />
                 },
+                
+                {
+                    path: "/about-us",
+                    element : <AboutUs/>
+                }
             ]
         },
         {
