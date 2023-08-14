@@ -72,7 +72,7 @@ const Navbar = () => {
                         <Link className='link' to='/'>Home</Link>
                     </div>
                     <div className='item'>
-                        <Link className='link' to='/'>About</Link>
+                        <Link className='link' to='/about-us'>About</Link>
                     </div>
                     <div className='item'>
                         <Link className='link' to='/'>Contact</Link>
