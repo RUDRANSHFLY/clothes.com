@@ -1,12 +1,18 @@
 *{
-    margin: 0;
     font-family: cursive;
-    padding: 0%;
-    margin: 0%;
     overflow-x: hidden;
+    margin: 0%;
+    padding:0%;
 }
+
+
 
 body{
     background-color: aqua;
     color: black;
 }
+
+
+
+
+

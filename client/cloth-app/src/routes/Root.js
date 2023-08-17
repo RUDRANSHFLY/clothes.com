@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 
+
 import Home from '../pages/Home/Home.jsx';
 import AboutUs from "../pages/AboutUs/AboutUs.jsx";
 import Product from '../pages/Product/Product.jsx';
@@ -19,6 +20,7 @@ import SignIn from "../Auth/SignIn/SignIn.jsx";
 import SignUp from "../Auth/SignUp/SignUp.jsx";
 
 import '../App.scss'
+import Stores from "../pages/Stores/Stores.jsx";
 
 
 
@@ -59,6 +61,11 @@ function Root() {
                 {
                     path: "/about-us",
                     element : <AboutUs/>
+                },
+                
+                {
+                    path : "/stores",
+                    element : <Stores/>
                 }
             ]
         },

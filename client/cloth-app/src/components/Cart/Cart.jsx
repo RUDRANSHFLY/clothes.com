@@ -27,8 +27,8 @@ const Cart = () => {
         <div className="item" key={item.id} >
           <img src={process.env.REACT_APP_UPLOAD_URL+item.img} alt="" />
           <div className="details">
-            <h1>{item.title}</h1>
-            <p>{item.desc.substring(0,100)}</p>
+            <h1>{item?.title}</h1>
+            <p>{item?.desc?.substring(0,100)}</p>
             <div className="itemPrice">
               {item.quantity} * {item.price}
             </div>

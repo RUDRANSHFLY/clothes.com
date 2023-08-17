@@ -129,6 +129,30 @@ const AboutUs = () => {
               </div>
             </div>
 
+            <div className='teammeamber'>
+              <img src="https://yt3.googleusercontent.com/0op3NrEEmhcR4jwkCnSNv4PWvHE6kj7He8C2aocxyLfx1Tx-hN1JwmxaUj5O626ooqnWSrCJ=s900-c-k-c0x00ffffff-no-rj" alt="" />
+              <div className="occu">
+                <h2>Tech Burner</h2>
+                <h3>Tester</h3>
+              </div>
+            </div>
+
+            <div className='teammeamber'>
+               <img src="https://pbs.twimg.com/media/EapOR9vVAAEWuDh.jpg:large" alt="" srcset="" />
+               <div className="occu">
+                <h2>Gadget Byte</h2>
+                <h3>Tester</h3>
+              </div>
+            </div>
+
+            <div className='teammeamber'>
+               <img src="https://static.toiimg.com/thumb/msid-96475489,width-900,height-1200,resizemode-6.cms" alt="" srcset="" />
+               <div className="occu">
+                <h2>Technical Guruji</h2>
+                <h3>Tester</h3>
+              </div>
+            </div>
+
         </div>
     </div>
   )

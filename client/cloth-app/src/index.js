@@ -7,6 +7,8 @@ import Loading from "./components/Loading/Loading.jsx";
 import {persistor} from "./redux/store.js";
 import { PersistGate } from 'redux-persist/integration/react'
 
+
+
 const app = document.getElementById("root");
 const root = createRoot(app);
 
