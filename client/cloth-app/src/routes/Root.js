@@ -66,7 +66,9 @@ function Root() {
                 {
                     path : "/stores",
                     element : <Stores/>
-                }
+                },
+
+             
             ]
         },
         {
