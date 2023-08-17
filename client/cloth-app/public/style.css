@@ -12,7 +12,10 @@ body{
     color: black;
 }
 
-
+.leaflet-container { 
+    height: 50vh; 
+    width: 50vw;
+}
 
 
 

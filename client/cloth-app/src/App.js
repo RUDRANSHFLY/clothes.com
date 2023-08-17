@@ -2,7 +2,6 @@ import {RouterProvider} from "react-router-dom";
 import Root from "./routes/Root.js";
 
 
-
 const router = Root();
 
 
