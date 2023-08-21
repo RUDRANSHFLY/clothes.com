@@ -1,5 +1,7 @@
 .cart{
     position: absolute;
+    overflow-x: hidden;
+   
     right: 20px;
     top: 80px;
     z-index: 999;
@@ -65,11 +67,10 @@
         font-size: 1rem;
         background: #000;
         color: white;
-        width: 40%;
-        margin-left: 40%;
+        width: 100%;
+        margin-left: 10px;
         border-radius: 20px;
         padding: 10px;
-        margin: auto;
         margin-top: 5%;
         &:hover{
             cursor: pointer;

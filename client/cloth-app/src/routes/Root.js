@@ -21,6 +21,7 @@ import SignUp from "../Auth/SignUp/SignUp.jsx";
 
 import '../App.scss'
 import Stores from "../pages/Stores/Stores.jsx";
+import Contact from "../components/Contact/Contact.jsx";
 
 
 
@@ -68,6 +69,11 @@ function Root() {
                     element : <Stores/>
                 },
 
+                {
+                    path : "/contact-us",
+                    element : <Contact/>
+                }
+
              
             ]
         },
@@ -85,6 +91,7 @@ function Root() {
             ]
             
         },
+       
     ]);
     return router
 }

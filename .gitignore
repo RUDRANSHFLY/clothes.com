@@ -1,5 +1,6 @@
 client/cloth-app/node_modules
 client/cloth-app/package-lock.json
 client/cloth-app/package.json
+client/cloth-app/build
 .vscode
 client/cloth-app/.env

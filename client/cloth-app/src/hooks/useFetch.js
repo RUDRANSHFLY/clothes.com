@@ -17,11 +17,12 @@ const useFetch = (url) => {
                 setLoading(true);
                 const res = await makeRequest.get(url);
                 setData(res.data.data);
+                setLoading(false)
             } catch (error) {
                 setError(true);
+                setLoading(true);
                 console.log(error);
             }
-            setLoading(false);
         }
         fetchData();
     }, [url]);

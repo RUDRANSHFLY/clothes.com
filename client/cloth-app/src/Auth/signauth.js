@@ -23,6 +23,7 @@ async function signauth(data) {
             return true;
         }else{
             alert("WRONG PASSWORD OR WRONG USERNAME");
+            return false;
         }
     }
 }

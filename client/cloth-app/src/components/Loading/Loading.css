@@ -1,0 +1,44 @@
+@keyframes loading {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0);
+    }
+}
+
+
+.loading{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.loading span{
+    border : 1px solid black ;
+    display: block;
+    width : 100px ;
+    height: 100px;
+    background-color: palegreen;
+    animation: loading 2s ease-in-out infinite;
+}
+
+
+.loading span:nth-child(2),
+.loading span:nth-child(4){
+    animation-delay: 100ms;
+}
+
+
+.loading span:nth-child(3),
+.loading span:nth-child(5),
+.loading span:nth-child(7){
+    animation-delay: 200ms;
+}
+
+.loading span:nth-child(6),
+.loading span:nth-child(8){
+    animation-delay: 300ms;
+}
+
+.loading span:nth-child(9){
+    animation-delay: 400ms;
+}

@@ -1,1 +1,22 @@
+.stores{
+    padding-top: 40px;
+    background-image: url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1{
+        text-align: center;
+    }
+    .map{
+        width: 100vw;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 100%;
 
+        iframe{
+            margin-bottom: 20px;
+            border: 0px;
+        }
+    }
+}

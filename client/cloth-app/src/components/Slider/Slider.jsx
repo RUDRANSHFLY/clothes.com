@@ -39,7 +39,7 @@ const Slider = () => {
     "https://images.pexels.com/photos/10130500/pexels-photo-10130500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/6770026/pexels-photo-6770026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/6076498/pexels-photo-6076498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/17186084/pexels-photo-17186084/free-photo-of-pensive-young-woman-with-painted-face-standing-in-the-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/1130624/pexels-photo-1130624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ];
 
   const prevSlide = () =>{
@@ -51,7 +51,7 @@ const Slider = () => {
   }
 
   useEffect(() => {
-    const slideTimer = setTimeout(nextSlide,5000);
+    const slideTimer = setTimeout(nextSlide,2000);
     return () => {
       clearInterval(slideTimer)
     };

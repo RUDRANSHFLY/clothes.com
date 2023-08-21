@@ -75,10 +75,10 @@ const Navbar = () => {
                         <Link className='link' to='/about-us'>About</Link>
                     </div>
                     <div className='item'>
-                        <Link className='link' to='/'>Contact</Link>
+                        <Link className='link' to='/contact-us'>Contact</Link>
                     </div>
                     <div className='item'>
-                        <Link className='link' to='/'>Stores</Link>
+                        <Link className='link' to='/stores'>Stores</Link>
                     </div>
                     <div className='icons'>
                         <FontAwesomeIcon icon={faUser} />
