@@ -6,7 +6,18 @@ import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import signauth from '../signauth.js';
 import { useHistory } from 'react-router-use-history';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+ export function notify() {
+  var n = getAuth();
+  if(n){
+    toast("Welcome");
+  }else{
+    toast("Wrong Password")
+  }
+}
 
 let isAuth = false ; 
   function setAuth(auth) {
@@ -74,8 +85,9 @@ const SignIn =  () => {
                 <input onChange={inputHandle} value={data.password} type="password" name="password" id="password" />
               </label>
               <br />
-              <button type="submit">Sign-In</button>
+              <button type="submit" onClick={notify()}>Sign-In</button>
             </form>
+            
             <div className="alter">
               <h3>
                 Not have an account ? <Link to={'/auth/sign-up/'}>

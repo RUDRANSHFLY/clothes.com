@@ -1,4 +1,12 @@
+@media (min-width:1321px) {
+    .navbar .wrapper{
+        .humberger-menu{
+            display: none;
+        }
+    }
+}
 .navbar{
+    
     height: 70px;
     
    
@@ -24,10 +32,10 @@
                 width: 120px;
                 font-size: 1.2rem;
                 padding: 10px;
-                
                 background-color: black;
                 color: white;
                 cursor: pointer;
+                
             }
         }
         .center{
@@ -59,6 +67,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                      
                    }
 
                 }
@@ -72,6 +81,9 @@
 
 }
 
+.resnav{
+    display: none;
+}
 .item img{
     margin-right: 5px;
 }

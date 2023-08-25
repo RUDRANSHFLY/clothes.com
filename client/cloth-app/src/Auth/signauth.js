@@ -2,7 +2,7 @@ import useEntry from "../hooks/userEntry.js";
 import { encryptPassword, getencryptPassword } from "./Encrypt.js";
 import { checkUser } from "../hooks/userOperation.js";
 import { getUserPassword } from "../hooks/userOperation.js";
-
+import { notify } from "./SignIn/SignIn.jsx";
 
 
 
@@ -19,7 +19,7 @@ async function signauth(data) {
 
         var pass = getencryptPassword(inputPassword, orignalPassword);
         if(pass == true){
-            alert("Welcome");
+            notify();
             return true;
         }else{
             alert("WRONG PASSWORD OR WRONG USERNAME");

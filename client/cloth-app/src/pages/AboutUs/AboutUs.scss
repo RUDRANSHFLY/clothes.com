@@ -1,10 +1,13 @@
 .aboutus{
+    width: 100vw;
+    height: inherit;
+    overflow-x: hidden;
     background-image: url("../../../public/img/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    padding: 50px;
-    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;    
     
 
 
@@ -23,14 +26,15 @@
         .company{
             background-color: aliceblue;
             margin-top: 5%;
-            width: 100%;
+            width: 100vw;
+            height: inherit;
             display: flex;
             justify-content: space-around;
 
             .r{
                 display: flex;
                 flex-direction: column;
-                width: 30%;
+                width: 30vw;
                 justify-content: space-around;
                 img{
                     width: 100%;
@@ -41,7 +45,7 @@
     
 
     .story{
-        width: 90%;
+        width: 90vw;
         margin: auto;
         margin-bottom: 100px;
 
@@ -79,7 +83,7 @@
     }
     .team{
         margin-top: 5%;
-        width: 100%;
+        width: 100vw;
         margin-left: 1%;
         display: flex;
         justify-content: space-around;

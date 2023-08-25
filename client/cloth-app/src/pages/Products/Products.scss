@@ -1,14 +1,14 @@
 .products{
     background-color: wheat;
-    height: 100vh;
     padding: 30px 50px;
     display: flex;
+    overflow-y:hidden;
 
         .left{
             flex: 1;
             position:sticky;
             height: 100%; 
-            top: 200px;
+            top: 50px;
 
             .filterItem{
                 margin-bottom: 30px;
@@ -29,6 +29,7 @@
         }
 
         .right{
+            
             flex: 5;
 
             .catImg{

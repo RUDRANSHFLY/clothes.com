@@ -72,11 +72,13 @@
 
     .right{
         width: 90%;
+        overflow: hidden;
         img{
             margin-top: 5%;
             width: 100%;
             margin-left: 5%;
             margin: auto;
+            object-fit:contain;
         }
     }
 
