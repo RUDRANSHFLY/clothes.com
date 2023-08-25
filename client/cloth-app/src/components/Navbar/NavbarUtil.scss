@@ -1,0 +1,80 @@
+@media (max-width:1320px) and (min-width:0px) {
+    .navbar{
+        position: relative;
+        width: 100vw;
+       
+        .wrapper{
+            .humberger-menu button{
+                background-color: transparent;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .left{
+                display: none;
+            }
+            .center{
+                width: 95%;
+                text-align: center;
+            }
+            .right{
+                display: none;
+            }
+        }
+        
+        
+    }
+    .resnav{
+        display: none;
+    }
+    .resnew{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        font-size: 20px;
+        background-color: whitesmoke;
+        flex-direction: column;
+                .new-right{
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 20px;
+                    font-size: 30px;
+                    .item{
+                        overflow: hidden;
+                        padding: auto;
+                        margin-bottom: 20px;
+                        border-bottom: 1px black solid;
+                        text-align: center;
+                        .link{
+                            padding-left: 20px;
+                            padding: auto;
+                        }
+                    }
+                }
+                .new-left{
+                    display: flex;
+                    gap: 50px;
+                    justify-content: center;
+                    border-bottom: 1px solid black;
+                    .item{
+                        margin-bottom: 20px;
+                    }
+                    .item .auth{
+                        width: 30vw;
+                        font-size:30px;
+                        padding: 10px;
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                    }
+                    
+                }
+                .cat{
+                    margin-top: 2%;
+                    display: flex;
+                    gap: 50px;
+                    font-size: 30px;
+                    justify-content: center;
+                }
+    }
+}
