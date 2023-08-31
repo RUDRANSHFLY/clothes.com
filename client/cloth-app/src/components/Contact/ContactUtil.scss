@@ -1,0 +1,39 @@
+@media (max-width:768px) {
+    .contact{
+        width: 100vw;
+        height: inherit;
+        display: block;
+
+        .left{
+            width: 100vw;
+            img{
+                width: 80vw;
+                height: 80vw;
+            }
+
+           
+        }
+
+        .right{
+            width: 100vw;       
+        }
+    }
+}
+
+@media (max-width:594px) {
+   .contact .right .bottom{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        .contactLeft{
+            width: 90vw;
+            margin: auto;
+        }
+        .contactRight{
+            width: 80vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            justify-content: center;
+        }
+   }
+}

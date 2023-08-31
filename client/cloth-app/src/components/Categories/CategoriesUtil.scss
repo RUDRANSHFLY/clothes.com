@@ -1,0 +1,43 @@
+@media (max-width:426px) and (min-width:0px){
+    .categories{
+        display: block;
+        width: 95vw;
+        margin: auto;
+        height: inherit;
+        
+        .row{
+            overflow: hidden;
+            
+        }
+
+        img{
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            transition: all 1s ease;
+            
+            &:hover{
+               cursor: pointer;
+               scale: 1.5;
+            }
+        }
+
+        button{
+            background-color: black;
+            color: white;
+            width: 60vw;
+            height: 10vh;
+            font-size: 1.5rem;
+            position: relative;
+            position: relative;
+            top: -190px;
+            right: 0px;
+            left: 55px;
+        }
+
+        .cate{
+            margin: 10px;
+        }
+    }
+
+}

@@ -3,7 +3,8 @@ import { encryptPassword, getencryptPassword } from "./Encrypt.js";
 import { checkUser } from "../hooks/userOperation.js";
 import { getUserPassword } from "../hooks/userOperation.js";
 import { notify } from "./SignIn/SignIn.jsx";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 async function signauth(data) {
@@ -19,8 +20,8 @@ async function signauth(data) {
 
         var pass = getencryptPassword(inputPassword, orignalPassword);
         if(pass == true){
-            notify();
-            return true;
+           await notify()
+           return true;
         }else{
             alert("WRONG PASSWORD OR WRONG USERNAME");
             return false;
