@@ -8,6 +8,7 @@ import signauth from '../signauth.js';
 import { useHistory } from 'react-router-use-history';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../SignIn/SignInUtil.scss'
 
 // function to dd notification based on sign in credential 
 export async function notify() {
@@ -26,7 +27,7 @@ export async function notify() {
 
 
 let isAuth = false;
-function setAuth(auth) {
+export function setAuth(auth) {
   isAuth = auth;
 }
 
@@ -78,7 +79,8 @@ const SignIn = () => {
           </div>
           <div className='down'>
             <h1>Welcome Back </h1>
-            <h4>Welcome Back ! Please Enter your Details</h4>
+            <h4>Welcome Back !</h4>
+            <h4>Please Enter your Details</h4>
           </div>
           <form onSubmit={(e) => handle(e)}>
             <label htmlFor="username">
@@ -98,7 +100,7 @@ const SignIn = () => {
 
           <div className="alter">
             <h3>
-              Not have an account ? <Link to={'/auth/sign-up/'}>
+              Not have an account ? <br /><Link to={'/auth/sign-up/'}>
                 Sign-Up
               </Link>
             </h3>

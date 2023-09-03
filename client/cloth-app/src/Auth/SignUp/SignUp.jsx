@@ -1,5 +1,6 @@
-import React from 'react'
-import "../SignUp/SignUp.scss"
+import React from 'react';
+import "../SignUp/SignUp.scss";
+import "../SignUp/SignUpUtil.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
@@ -64,7 +65,7 @@ const SignUp = () => {
             </form>
             <div className="alter">
               <h3>
-                Already have an account ? <Link to={'/auth/sign-in/'}>
+                Already have an account ? <br /><Link to={'/auth/sign-in/'}>
                 Sign in
                 </Link>
               </h3>
