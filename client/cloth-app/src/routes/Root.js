@@ -22,6 +22,8 @@ import SignUp from "../Auth/SignUp/SignUp.jsx";
 import '../App.scss'
 import Stores from "../pages/Stores/Stores.jsx";
 import Contact from "../components/Contact/Contact.jsx";
+import Error from "../components/Error/Error.jsx";
+import Profile from "../Auth/Profile/Profile.jsx";
 
 
 
@@ -72,7 +74,13 @@ function Root() {
                 {
                     path : "/contact-us",
                     element : <Contact/>
-                }
+                },
+
+                {
+                    path : "/profile",
+                    element : <Profile/>
+                },
+                
 
              
             ]
@@ -91,6 +99,11 @@ function Root() {
             ]
             
         },
+
+        {
+            path:'*',
+            element : <Error/>
+        }
        
     ]);
     return router
