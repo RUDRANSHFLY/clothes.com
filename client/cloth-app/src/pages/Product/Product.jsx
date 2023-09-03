@@ -1,5 +1,6 @@
 import React from "react";
 import "../Product/Product.scss";
+import "../Product/ProductUtil.scss";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
@@ -9,6 +10,7 @@ import Loading from "../../components/Loading/Loading";
 import useFetch from "../../hooks/useFetch.js";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer.js";
+import Swal from 'sweetalert2'
 
 const Product = () => {
   const id = useParams().id;
@@ -115,7 +117,8 @@ const Product = () => {
                 Add To WishList <FontAwesomeIcon icon={faHeart} />
               </button>
               <button id="cart" onClick={
-                () => dispatch(
+                () => 
+               {dispatch(
                   addToCart({
                     id : data.id,
                     title : data.attributes.title ,
@@ -124,7 +127,15 @@ const Product = () => {
                     img : data.attributes.img.data.attributes.url,
                     quantity,
                     })
-                  )
+                  );
+                  Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Product Added to Cart',
+                    showConfirmButton: true,
+                    
+                  })
+              }
               }>
                 Add To Cart <FontAwesomeIcon icon={faCartShopping} />
               </button>
