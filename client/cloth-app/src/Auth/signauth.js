@@ -5,6 +5,8 @@ import { getUserPassword } from "../hooks/userOperation.js";
 import { notify } from "./SignIn/SignIn.jsx";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setData } from "./Profile/Profile.jsx";
+import Swal from 'sweetalert2'
 
 
 async function signauth(data) {
@@ -20,10 +22,19 @@ async function signauth(data) {
 
         var pass = getencryptPassword(inputPassword, orignalPassword);
         if(pass == true){
-           await notify()
+           setData(data.username,data.password);
+           Swal.fire(
+            'Sucess!',
+            'Your Welcome to Clothes.com!',
+            'success'
+          )
            return true;
         }else{
-            alert("WRONG PASSWORD OR WRONG USERNAME");
+            Swal.fire(
+                'OOPS SOMETHING WRONG!',
+                'User not Exist or Might Have Entered Wrong Credential!',
+                'error'
+              )
             return false;
         }
     }

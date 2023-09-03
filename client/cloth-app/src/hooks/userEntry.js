@@ -1,6 +1,22 @@
 import { postRequest } from "../makeRequest.js";
 
 
+
+export const getUserEmail = async (username) => {
+    const url = `/usercloths?[filters][username][$eq]=${username}`;
+    const get = await postRequest.get(url);
+    const userEmail = await get.data.data[0].attributes.email;
+    return userEmail;
+}
+
+export const getUserId = async (username) => {
+    const url = `/usercloths?[filters][username][$eq]=${username}`;
+    const get = await postRequest.get(url);
+    return get.data.data[0].id;
+    // return get.data.data.id;
+    
+}
+
 const useEntry = (data) => {
     const newdata = {
         "data" : {
