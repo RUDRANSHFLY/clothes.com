@@ -24,6 +24,13 @@ import { useSelector } from 'react-redux/es/hooks/useSelector.js';
 import { getAuth } from "../../Auth/SignIn/SignIn.jsx";
 
 
+const auth = getAuth();
+async function getProfile() {
+    if(auth == false){
+        return alert("First Sign-In");
+    }
+    console.log(auth);
+}
 
 
 
@@ -91,7 +98,7 @@ const Navbar = () => {
                             <Link className='link' to='/stores'>Stores</Link>
                         </div>
                         <div className='icons'>
-                            <FontAwesomeIcon icon={faUser} />
+                            <Link className='link' to='/profile'> <FontAwesomeIcon icon={faUser} /></Link>
                             <FontAwesomeIcon icon={faHeart} />
                             <div className='cartIcon'>
                                 <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
@@ -142,7 +149,10 @@ const Navbar = () => {
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faUser} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/profile'>Profile</Link>
+                        <Link onClick={()=> {
+                            seticon(false);
+                            getProfile;
+                            }}  className='link' to='/profile'>Profile</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
