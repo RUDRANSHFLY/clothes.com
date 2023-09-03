@@ -1,0 +1,54 @@
+.profile {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://images.pexels.com/photos/96627/pexels-photo-96627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .profilediv {
+    padding: 2vw;
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+    background-color: wheat;
+
+    .divuser {
+      margin: auto;
+      margin-bottom: 2vw ;
+      display: flex;
+      width: 45vw;
+      height: 10vh;
+      justify-content: center;
+      align-items: center;
+      background-color: whitesmoke;
+      border-radius: 20px;
+      #user {
+        margin-right: 5%;
+        border: 2px black solid;
+        padding: 10px;
+      }
+
+      h1 {
+        margin-right: 5%;
+      }
+      #clothuser {
+        border-bottom: 2px solid black;
+      }
+
+      
+    }
+    button{
+      margin: auto;
+      height: 10vh;
+      font-size: 2rem;
+      color: white;
+      width: 15vw;
+      margin-left: 25vw;
+      background-color: black;
+      cursor: pointer;
+    }
+  }
+}
