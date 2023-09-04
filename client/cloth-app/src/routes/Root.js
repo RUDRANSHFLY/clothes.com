@@ -24,15 +24,16 @@ import Stores from "../pages/Stores/Stores.jsx";
 import Contact from "../components/Contact/Contact.jsx";
 import Error from "../components/Error/Error.jsx";
 import Profile from "../Auth/Profile/Profile.jsx";
+import Cart from "../components/Cart/Cart.jsx";
 
 
 
-function layout(){
-    return(
+function layout() {
+    return (
         <div className="app">
-            <Navbar/>
-            <Outlet/>
-            <Footer/>
+            <Navbar />
+            <Outlet />
+            <Footer />
         </div>
     );
 }
@@ -40,71 +41,75 @@ function layout(){
 
 
 function Root() {
-   
+
     const router = createBrowserRouter([
         {
-            path : "/" ,
-            element : layout(),
+            path: "/",
+            element: layout(),
             children: [
                 {
-                    path : "/",
-                    element : <Home />
+                    path: "/cart",
+                    element: <Cart />
                 },
-                
                 {
-                    path : "/product/:id",
-                    element : <Product />
+                    path: "/",
+                    element: <Home />
                 },
-        
+
                 {
-                    path : "/products/:id",
-                    element : <Products />
+                    path: "/product/:id",
+                    element: <Product />
                 },
-                
+
+                {
+                    path: "/products/:id",
+                    element: <Products />
+                },
+
                 {
                     path: "/about-us",
-                    element : <AboutUs/>
-                },
-                
-                {
-                    path : "/stores",
-                    element : <Stores/>
+                    element: <AboutUs />
                 },
 
                 {
-                    path : "/contact-us",
-                    element : <Contact/>
+                    path: "/stores",
+                    element: <Stores />
                 },
 
                 {
-                    path : "/profile",
-                    element : <Profile/>
+                    path: "/contact-us",
+                    element: <Contact />
                 },
-                
 
-             
+                {
+                    path: "/profile",
+                    element: <Profile />
+                },
+
+
+
             ]
         },
         {
-            path : "/auth",
-            children : [
+            path: "/auth",
+            children: [
                 {
-                    path : "/auth/sign-in",
-                    element: <SignIn/>,
+                    path: "/auth/sign-in",
+                    element: <SignIn />,
                 },
                 {
-                    path : "/auth/sign-up",
-                    element: <SignUp/>
+                    path: "/auth/sign-up",
+                    element: <SignUp />
                 },
             ]
-            
+
         },
 
         {
-            path:'*',
-            element : <Error/>
+            path: '*',
+            element: <Error />
         }
-       
+
     ]);
     return router
 }
