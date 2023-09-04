@@ -1,0 +1,14 @@
+@media (max-width: 769px) {
+  .trendingProducts {
+    .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      p {
+        flex: 3;
+        color: black;
+      }
+    }
+  }
+}
