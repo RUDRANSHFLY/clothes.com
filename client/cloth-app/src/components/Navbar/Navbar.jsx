@@ -26,31 +26,35 @@ import { getAuth } from "../../Auth/SignIn/SignIn.jsx";
 
 const auth = getAuth();
 async function getProfile() {
-    if(auth == false){
+    if (auth == false) {
         return alert("First Sign-In");
     }
     console.log(auth);
 }
 
-
+// function getPuzzle() {
+//     return window.localStorage.getItem('puzzel')
+// }
 
 const Navbar = () => {
     const auth = getAuth();
     const [open, setopen] = useState(false);
     const [icon, seticon] = useState(false);
     const products = useSelector((state) => state.cart.products)
+    const puzzel = auth;
 
 
-    
-    
-    
+
+
+
+
     return (
         <>
             <div className='navbar'>
                 <div className='wrapper'>
                     <div className='left'>
                         {
-                            auth
+                            puzzel
                                 ? null
                                 : (
                                     <>
@@ -133,48 +137,48 @@ const Navbar = () => {
                 <div className='new-right'>
                     <div className='item'>
                         <FontAwesomeIcon icon={faHouse} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/'>Home</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/'>Home</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faInfo} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/about-us'>About</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/about-us'>About</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faPhone} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/contact-us'>Contact</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/contact-us'>Contact</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faStore} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/stores'>Stores</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/stores'>Stores</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faUser} />
-                        <Link onClick={()=> {
+                        <Link onClick={() => {
                             seticon(false);
                             getProfile;
-                            }}  className='link' to='/profile'>Profile</Link>
+                        }} className='link' to='/profile'>Profile</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/cart'>Cart</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/cart'>Cart</Link>
                     </div>
 
                 </div>
                 <div className='new-left'>
                     {
-                        auth
+                        puzzel
                             ? null
                             : (
                                 <>
                                     <div className='item'>
-                                        <Link onClick={()=> {seticon(false)}} className='link' to='/auth/sign-up'>
+                                        <Link onClick={() => { seticon(false) }} className='link' to='/auth/sign-up'>
                                             <button className='auth'>
                                                 Sign-Up
                                             </button>
                                         </Link>
                                     </div>
                                     <div className='item'>
-                                        <Link onClick={()=> {seticon(false)}} className='link' to='/auth/sign-in'>
+                                        <Link onClick={() => { seticon(false) }} className='link' to='/auth/sign-in'>
                                             <button className='auth'>
                                                 Sign-In
                                             </button>
@@ -187,13 +191,13 @@ const Navbar = () => {
                 </div>
                 <div className='cat'>
                     <div className='item'>
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/products/4/'>Men</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/products/4/'>Men</Link>
                     </div>
                     <div className='item'>
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/products/5/'>Women</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/products/5/'>Women</Link>
                     </div>
                     <div className='item'>
-                        <Link onClick={()=> {seticon(false)}} className='link' to='/products/3/'>Children</Link>
+                        <Link onClick={() => { seticon(false) }} className='link' to='/products/3/'>Children</Link>
                     </div>
 
                 </div>
