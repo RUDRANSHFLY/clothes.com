@@ -1,0 +1,340 @@
+@media (min-width: 770px) and (max-width: 1025px) {
+  .products {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: cadetblue;
+    .offSearch {
+      display: none;
+    }
+    .search {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fbfcf8;
+
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        padding-top: 2vw;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .searchItem {
+        display: flex;
+        padding-top: 2vw;
+        width: 100vw;
+        h2 {
+          text-align: center;
+          font-size: 2rem;
+        }
+        .serachByCategory {
+          padding-left: 5vw;
+          margin: auto;
+          display: flex;
+          gap: 50px;
+          font-size: 2rem;
+          .inputcheck label {
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+      .serachPrice {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .filterItem {
+          margin-top: 2vw;
+        }
+      }
+      .filterItem {
+        padding-top: 2vw;
+        width: 90vw;
+        display: flex;
+        font-size: 2rem;
+        justify-content: space-evenly;
+        .inputItem {
+          display: flex;
+          gap: 10px;
+        }
+      }
+      button {
+        margin-top: 2vw;
+        width: 25vw;
+        height: 10vh;
+        font-size: 2rem;
+        border-radius: 20px;
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .newright {
+      display: none;
+    }
+    .left {
+      display: none;
+    }
+    .right {
+      padding: 2vw;
+      .catImg {
+        display: none;
+      }
+
+      .bottomButton {
+        position: absolute;
+        top: 75vh;
+        left: 36%;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        button {
+          position: fixed;
+          width: 30vw;
+          height: 10vh;
+          color: white;
+          font-size: 1.5rem;
+          background-color: #282c35;
+          border-radius: 15px;
+          &hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 427px) and (max-width: 769px) {
+  .products {
+    width: 100vw;
+    height: inherit;
+    position: relative;
+    background-color: cadetblue;
+    .offSearch {
+      display: none;
+    }
+    .search {
+      margin: auto;
+      width: 100vw;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fbfcf8;
+
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        padding-top: 2vw;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .searchItem {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2vw;
+        width: 100vw;
+        h2 {
+          text-align: center;
+          font-size: 2rem;
+        }
+        .serachByCategory {
+          padding-left: 5vw;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 50px;
+          font-size: 2rem;
+          .inputcheck label {
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+      .serachPrice {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .filterItem {
+          margin-top: 2vw;
+        }
+      }
+      .filterItem {
+        padding-top: 2vw;
+        width: 90vw;
+        display: flex;
+        font-size: 2rem;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .inputItem {
+          display: flex;
+          gap: 10px;
+        }
+      }
+      button {
+        margin-top: 2vw;
+        width: 25vw;
+        height: 10vh;
+        font-size: 2rem;
+        border-radius: 20px;
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .newright {
+      display: none;
+    }
+    .left {
+      display: none;
+    }
+    .right {
+      padding: 2vw;
+      .catImg {
+        display: none;
+      }
+
+      .bottomButton {
+        position: absolute;
+        top: 75vh;
+        left: 36%;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        button {
+          position: fixed;
+          width: 40vw;
+          height: 10vh;
+          color: white;
+          font-size: 1.5rem;
+          background-color: #282c35;
+          border-radius: 15px;
+          &hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 426px) {
+  .products {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: cadetblue;
+    .offSearch {
+      display: none;
+    }
+    .search {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 10px;
+      align-items: center;
+      background-color: #fbfcf8;
+
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .searchItem {
+        h2 {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+        .serachByCategory {
+          display: flex;
+          justify-content: space-evenly;
+          flex-direction: column;
+          flex-wrap: wrap;
+          font-size: 1.5rem;
+          gap: 10px;
+          .inputcheck {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 40px;
+          }
+        }
+      }
+      .serachPrice {
+        font-size: 1.5rem;
+      }
+      .filterItem {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 1.5rem;
+        justify-content: space-evenly;
+        .inputItem {
+          display: flex;
+          gap: 10px;
+        }
+      }
+      button {
+        margin-top: 2vw;
+        width: 35vw;
+        height: 8vh;
+        font-size: 1.5rem;
+        border-radius: 20px;
+        color: white;
+        background-color: black;
+      }
+    }
+
+    .newright {
+      display: none;
+    }
+    .left {
+      display: none;
+    }
+    .right {
+      padding: 2vw;
+      .catImg {
+        display: none;
+      }
+
+      .bottomButton {
+        position: absolute;
+        top: 60vh;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        button {
+          position: fixed;
+          width: 80vw;
+          height: 10vh;
+          color: white;
+          font-size: 1.5rem;
+          background-color: #282c35;
+          border-radius: 15px;
+          &hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}

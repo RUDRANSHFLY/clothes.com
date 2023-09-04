@@ -11,7 +11,7 @@ import useFetch from "../../hooks/useFetch.js";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer.js";
 import Swal from 'sweetalert2'
-
+import 'sweetalert2/src/sweetalert2.scss'
 const Product = () => {
   const id = useParams().id;
   const [selectImg, setselectImg] = useState("img");
@@ -21,13 +21,13 @@ const Product = () => {
 
   const dispatch = useDispatch()
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
-  const img = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img?.data?.attributes?.url;
-  const img2 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img2?.data?.attributes?.url;
-  const img3 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img3?.data?.attributes?.url;
-  const img4 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img4?.data?.attributes?.url;
-  const img5 = process.env.REACT_APP_UPLOAD_URL+data?.attributes?.img5?.data?.attributes?.url;
+  const img = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img?.data?.attributes?.url;
+  const img2 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img2?.data?.attributes?.url;
+  const img3 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img3?.data?.attributes?.url;
+  const img4 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img4?.data?.attributes?.url;
+  const img5 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img5?.data?.attributes?.url;
 
-  
+
   return (
     <div className="product">
       {loading ? (
@@ -36,7 +36,7 @@ const Product = () => {
         <>
           <div className="left">
             <div className="images">
-               <img
+              <img
                 src={img}
                 alt=""
                 srcSet=""
@@ -64,30 +64,30 @@ const Product = () => {
                 srcSet=""
                 onClick={(e) => setselectImg("img4")}
               />
-               
 
-               <img
+
+              <img
                 src={img5}
                 alt=""
                 srcSet=""
                 onClick={(e) => setselectImg("img5")}
               />
-           
 
-           
-            
+
+
+
             </div>
-              <div className="mainImg">
-                  <img src={process.env.REACT_APP_UPLOAD_URL+ data?.attributes?.[selectImg]?.data?.attributes?.url} alt="" srcSet="" />
-              </div>
+            <div className="mainImg">
+              <img src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.[selectImg]?.data?.attributes?.url} alt="" srcSet="" />
+            </div>
           </div>
           <div className="right">
             <h1>{data?.attributes?.title}</h1>
             <span className="price">$ {data?.attributes?.price * quantity}</span>
             <p>
-             {
-              data?.attributes?.desc
-             }
+              {
+                data?.attributes?.desc
+              }
             </p>
             <div className="size">
               <h2>SELECT SIZE</h2>
@@ -117,15 +117,15 @@ const Product = () => {
                 Add To WishList <FontAwesomeIcon icon={faHeart} />
               </button>
               <button id="cart" onClick={
-                () => 
-               {dispatch(
-                  addToCart({
-                    id : data.id,
-                    title : data.attributes.title ,
-                    desc : data.attributes.desc,
-                    price : data.attributes.price,
-                    img : data.attributes.img.data.attributes.url,
-                    quantity,
+                () => {
+                  dispatch(
+                    addToCart({
+                      id: data.id,
+                      title: data.attributes.title,
+                      desc: data.attributes.desc,
+                      price: data.attributes.price,
+                      img: data.attributes.img.data.attributes.url,
+                      quantity,
                     })
                   );
                   Swal.fire({
@@ -133,9 +133,8 @@ const Product = () => {
                     icon: 'success',
                     title: 'Product Added to Cart',
                     showConfirmButton: true,
-                    
                   })
-              }
+                }
               }>
                 Add To Cart <FontAwesomeIcon icon={faCartShopping} />
               </button>

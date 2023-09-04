@@ -46,8 +46,8 @@ const Products = () => {
               <div className="inputcheck" key={item.id} onChange={handleChange}>
                 <label htmlFor={item.id}>
                   {item.attributes.title}
-                  <input type="checkbox" name={item.id} id={item.id} value={item.id} />
                 </label>
+                <input type="checkbox" name={item.id} id={item.id} value={item.id} />
               </div>
             ))}
           </div>
