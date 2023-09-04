@@ -1,69 +1,68 @@
-.cart{
+@media (min-width: 1026px) {
+  .cart {
     position: absolute;
     overflow-x: hidden;
-   
     right: 20px;
     top: 80px;
     z-index: 999;
     background-color: white;
     padding: 20px;
-    box-shadow: 10px 10px 10px black ;
+    box-shadow: 10px 10px 10px black;
 
-    h1{
-        margin-bottom:  20px;
-        color: gray;
-        font-weight: 400;
-        font-size: 24px;
+    h1 {
+      margin-bottom: 20px;
+      color: gray;
+      font-weight: 400;
+      font-size: 24px;
     }
 
-    .item{
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        margin-bottom: 10px;
-        img{
-            width: 80px;
-            height: 100px;
-            object-fit: cover;
-        }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 10px;
+      img {
+        width: 80px;
+        height: 100px;
+        object-fit: cover;
+      }
     }
 
-    .details{
-        h1{
-            font-size: 18px;
-            font-weight: 500;
-        }
-        p{
-            color: gray;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .itemPrice{
-            color: blue;
-        }
-
-        .delete{
-            color: red;
-            font-size: 30px;
-            cursor: pointer;
-        }
-    }
-
-    .total{
-        margin-top: 50px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 500;
+    .details {
+      h1 {
         font-size: 18px;
-        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      p {
+        color: gray;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .itemPrice {
+        color: blue;
+      }
+
+      .delete {
+        color: red;
+        font-size: 30px;
+        cursor: pointer;
+      }
     }
 
+    .total {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-    .but{
-        display: flex;
-        justify-content: space-between;
+    .but {
+      display: flex;
+      justify-content: space-between;
 
-    button{
+      button {
         font-size: 1rem;
         background: #000;
         color: white;
@@ -72,13 +71,10 @@
         border-radius: 20px;
         padding: 10px;
         margin-top: 5%;
-        &:hover{
-            cursor: pointer;
-           
+        &:hover {
+          cursor: pointer;
         }
+      }
     }
-    }
-
-   
-        
-    }
+  }
+}

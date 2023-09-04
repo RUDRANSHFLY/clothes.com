@@ -1,0 +1,149 @@
+@media (max-width: 1025px) {
+  .cart {
+    background-image: url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    padding: 2vw;
+    h1 {
+      margin-bottom: 20px;
+      color: black;
+      font-weight: 400;
+      font-size: 24px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 50px;
+      margin-bottom: 10px;
+      img {
+        width: 25vw;
+        height: 25vh;
+        object-fit: cover;
+      }
+    }
+
+    .details {
+      h1 {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      p {
+        color: black;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+      .itemPrice {
+        color: black;
+      }
+
+      .delete {
+        color: red;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+
+    .total {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .but {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        font-size: 2rem;
+        background: #000;
+        color: white;
+        width: 100%;
+        margin-left: 10px;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 5%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .cart {
+    padding: 2vw;
+
+    h1 {
+      margin-bottom: 20px;
+      color: black;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 50px;
+      margin-bottom: 10px;
+      img {
+        width: 25vw;
+        height: 25vh;
+        object-fit: cover;
+      }
+    }
+
+    .details {
+      h1 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      p {
+        color: black;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+      .itemPrice {
+        color: black;
+      }
+
+      .delete {
+        color: red;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .total {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .but {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        font-size: 1rem;
+        background: #000;
+        color: white;
+        width: 100%;
+        margin-left: 10px;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 5%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
