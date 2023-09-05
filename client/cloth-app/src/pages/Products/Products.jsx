@@ -181,7 +181,7 @@ const Products = () => {
           className="catImg"
           src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt=""
-          srcset=""
+          srcSet=""
         />
         <List catId={catId} maxPrice={maxPrice} sortPrice={sort} subCat={selectsubCat} />
         <div className="bottomButton">

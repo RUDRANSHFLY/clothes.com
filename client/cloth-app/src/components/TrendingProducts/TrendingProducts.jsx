@@ -24,7 +24,7 @@ const TrendingProducts = ({ type }) => {
       </div>
 
       <div className="bottom">
-        {loading ? Loading : data.map(i => (
+        {loading ? <Loading /> : data.map(i => (
           <Card item={i} key={i.id} />
         ))
         }

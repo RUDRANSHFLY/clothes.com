@@ -6,29 +6,15 @@ import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import signauth from '../signauth.js';
 import { useHistory } from 'react-router-use-history';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import '../SignIn/SignInUtil.scss'
 
 // function to dd notification based on sign in credential 
-export async function notify() {
-  toast.success('🦄 Welcome', {
-      position: "top-center",
-      autoClose: false,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      });
-  }
 
 
 
-let isAuth = false;
+let isAuth = window.localStorage.setItem("isauth", false);
 export function setAuth(auth) {
-  isAuth = auth;
+  isAuth = window.localStorage.setItem("isauth", auth);
 }
 
 export function getAuth() {
@@ -58,11 +44,10 @@ const SignIn = () => {
     e.preventDefault();
     const r = await signauth(data);
     if (r == false) {
-     history.push("/auth/sign-up/");
+      history.push("/auth/sign-up/");
     } else {
       history.push("/");
       setAuth(true);
-      notify();
     }
   }
 
@@ -72,7 +57,7 @@ const SignIn = () => {
   return (
     <div>
       <div className='signin'>
-      
+
         <div className="left">
           <div className='up'>
             <h2><FontAwesomeIcon icon={faPagelines} /> Cloth.com</h2>

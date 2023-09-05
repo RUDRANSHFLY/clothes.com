@@ -1,4 +1,4 @@
-@media (min-width: 861px) {
+@media (min-width: 0px) and (max-width: 860px) {
   .profile {
     width: 100vw;
     height: 100vh;
@@ -19,39 +19,30 @@
       background-color: wheat;
 
       .divuser {
+        font-size: 0.8rem;
         position: relative;
         margin: auto;
         display: flex;
-        width: 80vw;
-        height: 15vh;
+        width: 100vw;
+        height: 20vh;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         background-color: whitesmoke;
         border-radius: 20px;
         #user {
-          margin-right: 5%;
           border: 2px black solid;
           padding: 10px;
-          position: absolute;
-          top: 2vw;
-          left: 2vw;
         }
         #email {
           margin-right: 5%;
           border: 2px black solid;
           padding: 10px;
-          position: absolute;
-          top: 2vw;
-          left: 2vw;
         }
         #password {
           margin-right: 5%;
           border: 2px black solid;
           padding: 10px;
-          position: absolute;
-          top: 2vw;
-          left: 2vw;
         }
 
         h1 {
@@ -66,7 +57,7 @@
         height: 10vh;
         font-size: 2rem;
         color: white;
-        width: 25vw;
+        width: 50vw;
         border-radius: 10px;
         margin-left: 25vw;
         background-color: black;

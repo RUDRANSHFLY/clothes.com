@@ -1,4 +1,4 @@
-import {RouterProvider} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import Root from "./routes/Root.js";
 
 
@@ -13,4 +13,6 @@ function App() {
     );
 }
 
-export default App ;
+export default App;
+
+

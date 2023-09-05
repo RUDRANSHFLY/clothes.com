@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faUser,
@@ -19,31 +20,52 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.scss";
 import "./NavbarUtil.scss"
-import Cart from '../Cart/Cart';
+import Cart, { isCartEmpty } from '../Cart/Cart.jsx';
 import { useSelector } from 'react-redux/es/hooks/useSelector.js';
 import { getAuth } from "../../Auth/SignIn/SignIn.jsx";
+import { useHistory } from 'react-router-use-history';
 
-
-const auth = getAuth();
-async function getProfile() {
-    if (auth == false) {
-        return alert("First Sign-In");
-    }
-    console.log(auth);
+function getPuzzle() {
+    return window.localStorage.getItem('puzzel');
 }
 
-// function getPuzzle() {
-//     return window.localStorage.getItem('puzzel')
-// }
+
 
 const Navbar = () => {
-    const auth = getAuth();
+
+
     const [open, setopen] = useState(false);
     const [icon, seticon] = useState(false);
     const products = useSelector((state) => state.cart.products)
-    const puzzel = auth;
+    let puzzel = getPuzzle();
+    if (puzzel == 'true') {
+        puzzel = true;
+    } else {
+        puzzel = false;
+    }
 
 
+    useEffect(() => {
+        const handleStorageChange = (e) => {
+            if (e.key === 'puzzel') {
+                // When the 'puzzel' key in localStorage changes, update the state
+                const newValue = e.newValue;
+                if (newValue === 'true') {
+                    window.localStorage.setItem('puzzel', true);
+                } else {
+                    window.localStorage.setItem('puzzel', false);
+                }
+            }
+        };
+
+        // Add the event listener
+        window.addEventListener('storage', handleStorageChange);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, []);
 
 
 
@@ -102,10 +124,36 @@ const Navbar = () => {
                             <Link className='link' to='/stores'>Stores</Link>
                         </div>
                         <div className='icons'>
-                            <Link className='link' to='/profile'> <FontAwesomeIcon icon={faUser} /></Link>
+                            <Link className='link' onClick={() => {
+                                if (window.localStorage.getItem('puzzel') == 'false') {
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'warning',
+                                        title: 'First Sign-In',
+                                        showConfirmButton: true,
+                                    })
+
+                                } else {
+                                    const newRoute = useHistory();
+                                    newRoute.push("/profile");
+                                }
+                            }}> <FontAwesomeIcon icon={faUser} /></Link>
                             <FontAwesomeIcon icon={faHeart} />
                             <div className='cartIcon'>
-                                <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
+                                <FontAwesomeIcon icon={faCartShopping} onClick={
+                                    () => {
+                                        if (window.localStorage.getItem('puzzel') == 'false') {
+                                            Swal.fire({
+                                                position: 'center',
+                                                icon: 'warning',
+                                                title: 'First Sign-In',
+                                                showConfirmButton: true,
+                                            })
+                                        } else {
+                                            setopen(!open)
+                                        }
+                                    }
+                                } />
                                 <span className='span'>{products.length}</span>
                             </div>
                         </div>
@@ -155,12 +203,35 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faUser} />
                         <Link onClick={() => {
                             seticon(false);
-                            getProfile;
-                        }} className='link' to='/profile'>Profile</Link>
+
+                            if (window.localStorage.getItem('puzzel') == 'false') {
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'warning',
+                                    title: 'First Sign-In',
+                                    showConfirmButton: true,
+                                })
+                            } else {
+                                setopen(!open)
+                            }
+
+                        }} className='link' >Profile</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
-                        <Link onClick={() => { seticon(false) }} className='link' to='/cart'>Cart</Link>
+                        <Link onClick={() => {
+                            if (window.localStorage.getItem('puzzel') == 'false') {
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'warning',
+                                    title: 'First Sign-In',
+                                    showConfirmButton: true,
+                                })
+                            } else {
+                                seticon(false);
+                                setopen(!open);
+                            }
+                        }} className='link' to='/cart'>Cart</Link>
                     </div>
 
                 </div>

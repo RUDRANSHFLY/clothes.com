@@ -10,23 +10,24 @@ export const getUserEmail = async (username) => {
 }
 
 export const getUserId = async (username) => {
-    const url = `/usercloths?[filters][username][$eq]=${username}`;
-    const get = await postRequest.get(url);
-    return get.data.data[0].id;
-    // return get.data.data.id;
-    
+    if (window.localStorage.getItem('puzzel') == 'true') {
+        const url = `/usercloths?[filters][username][$eq]=${username}`;
+        const get = await postRequest.get(url);
+        return get.data.data[0].id;
+    }
+
 }
 
 const useEntry = (data) => {
     const newdata = {
-        "data" : {
-            username : data.username,
-            email : data.email,
-            password : data.password,
+        "data": {
+            username: data.username,
+            email: data.email,
+            password: data.password,
         }
     }
     const url = '/usercloths/';
-    const post = postRequest.post(url,newdata)
+    const post = postRequest.post(url, newdata)
 }
 
 export default useEntry;

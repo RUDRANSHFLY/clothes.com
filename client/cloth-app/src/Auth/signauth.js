@@ -1,17 +1,13 @@
-import useEntry from "../hooks/userEntry.js";
+import useEntry, { getUserEmail } from "../hooks/userEntry.js";
 import { encryptPassword, getencryptPassword } from "./Encrypt.js";
 import { checkUser } from "../hooks/userOperation.js";
 import { getUserPassword } from "../hooks/userOperation.js";
-import { notify } from "./SignIn/SignIn.jsx";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { setData } from "./Profile/Profile.jsx";
 import Swal from 'sweetalert2'
+
 
 
 async function signauth(data) {
     const g = await checkUser(data.username);
-
     if (g == 0) {
         return false;
     } else {
@@ -22,16 +18,19 @@ async function signauth(data) {
 
         var pass = getencryptPassword(inputPassword, orignalPassword);
         if (pass == true) {
-            setData(data.username, data.password);
+
             Swal.fire(
                 'Sucess!',
                 'Your Welcome to Clothes.com!',
                 'success'
             )
 
-            // window.localStorage.setItem("puzzel", true);
-            // window.localStorage.setItem("username", data.username);
-            // window.localStorage.setItem("password", data.password);
+
+            const email = await getUserEmail(data.username);
+            window.localStorage.setItem('puzzel', true);
+            window.localStorage.setItem("username", data.username);
+            window.localStorage.setItem("password", data.password);
+            window.localStorage.setItem("email", email);
 
             return true;
         } else {

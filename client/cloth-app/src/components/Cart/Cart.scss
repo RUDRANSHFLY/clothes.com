@@ -26,6 +26,16 @@
         height: 100px;
         object-fit: cover;
       }
+      button #deleteButton {
+        width: 10vw;
+        height: 10vh;
+        font-size: 2rem;
+        background: black;
+        color: red;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 5px white solid;
+      }
     }
 
     .details {

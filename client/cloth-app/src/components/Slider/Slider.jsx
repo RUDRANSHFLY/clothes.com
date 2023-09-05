@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import 
-{ 
- useEffect
- } from 'react';
+import {
+useEffect
+} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import
-{
-    faArrowLeft,
-    faArrowRight 
+import {
+faArrowLeft,
+faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
 import "../Slider/Slider.scss";
 import "../Slider/SliderUtil.scss";
@@ -18,7 +16,7 @@ import "../Slider/SliderUtil.scss";
 const Slider = () => {
 
 
-  const [currentSlide,SetCurrentSlide] = useState(0);
+  const [currentSlide, SetCurrentSlide] = useState(0);
 
   const data = [
     "https://images.pexels.com/photos/5019878/pexels-photo-5019878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -37,60 +35,60 @@ const Slider = () => {
     "https://images.pexels.com/photos/10545016/pexels-photo-10545016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/355022/pexels-photo-355022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/9256867/pexels-photo-9256867.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/10130500/pexels-photo-10130500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/6770026/pexels-photo-6770026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/2529375/pexels-photo-2529375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/6076498/pexels-photo-6076498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.pexels.com/photos/1130624/pexels-photo-1130624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ];
 
-  const prevSlide = () =>{
+  const prevSlide = () => {
     SetCurrentSlide((prev) => (prev === 0 ? data.length - 1 : prev - 1));
   }
 
-  const nextSlide = () =>{
-    SetCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1) );    
+  const nextSlide = () => {
+    SetCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1));
   }
 
   useEffect(() => {
-    const slideTimer = setTimeout(nextSlide,2000);
+    const slideTimer = setTimeout(nextSlide, 2000);
     return () => {
       clearInterval(slideTimer)
     };
   }, [currentSlide]);
-  
+
 
 
   return (
     <div className='slider' onMouseEnter={nextSlide}>
-      <div className='container' style={{transform:`translateX(-${currentSlide * 100}vw)`}}>
-            <img src={data[0]} />
-            <img src={data[1]} />
-            <img src={data[2]} />
-            <img src={data[3]} />
-            <img src={data[4]} />
-            <img src={data[5]} />
-            <img src={data[6]} />
-            <img src={data[7]} />
-            <img src={data[8]} />
-            <img src={data[9]} />
-            <img src={data[10]} />
-            <img src={data[11]} />
-            <img src={data[12]} />
-            <img src={data[13]} />
-            <img src={data[14]} />
-            <img src={data[15]} />
-            <img src={data[16]} />
-            <img src={data[17]} />
-            <img src={data[18]} />
-            <img src={data[19]} />
+      <div className='container' style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
+        <img src={data[0]} />
+        <img src={data[1]} />
+        <img src={data[2]} />
+        <img src={data[3]} />
+        <img src={data[4]} />
+        <img src={data[5]} />
+        <img src={data[6]} />
+        <img src={data[7]} />
+        <img src={data[8]} />
+        <img src={data[9]} />
+        <img src={data[10]} />
+        <img src={data[11]} />
+        <img src={data[12]} />
+        <img src={data[13]} />
+        <img src={data[14]} />
+        <img src={data[15]} />
+        <img src={data[16]} />
+        <img src={data[17]} />
+        <img src={data[18]} />
+        <img src={data[19]} />
       </div>
       <div className='icons'>
-            <div className='icon'>
-                <FontAwesomeIcon icon={faArrowLeft} onClick={prevSlide}/>
-            </div>
-            <div className='icon'>
-                <FontAwesomeIcon icon={faArrowRight} onClick={nextSlide} />
-            </div>
+        <div className='icon'>
+          <FontAwesomeIcon icon={faArrowLeft} onClick={prevSlide} />
+        </div>
+        <div className='icon'>
+          <FontAwesomeIcon icon={faArrowRight} onClick={nextSlide} />
+        </div>
       </div>
     </div>
   )

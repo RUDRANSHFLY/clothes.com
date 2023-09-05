@@ -8,13 +8,13 @@ import "../Home/Home.scss"
 const Home = () => {
   return (
     <div className='home'>
-       <Slider/>
-       <FeaturedProducts type='featured'/>
-       <Categories/>
-       <TrendingProducts type='trending'/>
-       <Contact/>
+      <Slider />
+      <FeaturedProducts type='featured' />
+      <Categories />
+      <TrendingProducts type='trending' />
+      <Contact />
     </div>
   )
 };
 
-export default Home ;
+export default Home;

@@ -20,6 +20,9 @@
     },
     "password": {
       "type": "text"
+    },
+    "cart": {
+      "type": "json"
     }
   }
 }
