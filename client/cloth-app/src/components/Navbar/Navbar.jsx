@@ -125,19 +125,9 @@ const Navbar = () => {
                         </div>
                         <div className='icons'>
                             <Link className='link' onClick={() => {
-                                if (window.localStorage.getItem('puzzel') == 'false') {
-                                    Swal.fire({
-                                        position: 'center',
-                                        icon: 'warning',
-                                        title: 'First Sign-In',
-                                        showConfirmButton: true,
-                                    })
+                                seticon(false);
 
-                                } else {
-                                    const newRoute = useHistory();
-                                    newRoute.push("/profile");
-                                }
-                            }}> <FontAwesomeIcon icon={faUser} /></Link>
+                            }} to={(puzzel) ? '/profile' : '/auth/sign-in'} > <FontAwesomeIcon icon={faUser} /></Link>
                             <FontAwesomeIcon icon={faHeart} />
                             <div className='cartIcon'>
                                 <FontAwesomeIcon icon={faCartShopping} onClick={
@@ -201,21 +191,7 @@ const Navbar = () => {
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faUser} />
-                        <Link onClick={() => {
-                            seticon(false);
-
-                            if (window.localStorage.getItem('puzzel') == 'false') {
-                                Swal.fire({
-                                    position: 'center',
-                                    icon: 'warning',
-                                    title: 'First Sign-In',
-                                    showConfirmButton: true,
-                                })
-                            } else {
-                                setopen(!open)
-                            }
-
-                        }} className='link' >Profile</Link>
+                        <Link onClick={() => { seticon(false) }} to={(puzzel) ? '/profile' : '/auth/sign-in'} className='link' >Profile</Link>
                     </div>
                     <div className='item'>
                         <FontAwesomeIcon icon={faCartShopping} onClick={() => setopen(!open)} />
@@ -272,7 +248,7 @@ const Navbar = () => {
                     </div>
 
                 </div>
-            </div>
+            </div >
         </>
     )
 };

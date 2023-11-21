@@ -1,3 +1,4 @@
+const stripe = require('stripe')('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');
 import { getUserId } from "../../hooks/userEntry";
 import { makeRequest, postRequest } from "../../makeRequest";
 import { useEffect } from "react";
