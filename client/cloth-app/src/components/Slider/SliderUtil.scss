@@ -1,18 +1,17 @@
-@media (max-width:425px){
-    .slider{
+@media (max-width: 425px) {
+  .slider {
+    height: inherit;
+    .container {
+      height: inherit;
+      img {
+        padding-top: 5px;
         height: inherit;
-        .container{
-            height: inherit;
-            img{
-                padding-top: 5px;
-                height: inherit;
-                width: 100vw;
-                object-fit: cover;
-            }
-        } 
-        .icons{
-            bottom: 10px;
-            
-        }
+        width: 100vw;
+        object-fit: cover;
+      }
     }
+    .icons {
+      bottom: 10px;
+    }
+  }
 }
