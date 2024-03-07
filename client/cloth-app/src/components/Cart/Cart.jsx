@@ -78,7 +78,7 @@ const Cart = () => {
       ) : (
         productListCart.map((item) => (
           <div className="item" key={item.id} >
-            <img src={process.env.REACT_APP_UPLOAD_URL + item.attributes.img.data.attributes.formats.thumbnail.url} alt="" />
+            <img src={item.attributes.img.data.attributes.formats.thumbnail.url} alt="" />
             <div className="details">
               <h1>{item?.attributes.title.substring(0, 10)}</h1>
               <p>{item?.attributes.desc?.substring(0, 10)}</p>
