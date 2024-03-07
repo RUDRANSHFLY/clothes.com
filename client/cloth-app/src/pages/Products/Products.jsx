@@ -11,13 +11,17 @@ import { faFilter, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 const Products = () => {
   const catId = parseInt(useParams().id);
   const [okay, setOkay] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(10000);
   const [sort, setSort] = useState(null);
   const [selectsubCat, setselectsubCat] = useState([]);
 
   const { data, loading, error } = useFetch(
-    `/sub-categories?[filters][categories][id][$eq]=${catId}`
+    `/sub-categories?populate=*[filters][categories][id][$eq]=${catId}`
   );
+
+
+
+
 
 
   const handleChange = (e) => {
@@ -65,7 +69,7 @@ const Products = () => {
                 name="price"
                 id="pro_price"
                 min={0}
-                max={1000}
+                max={10000}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
                 }}
@@ -132,7 +136,7 @@ const Products = () => {
                 name="price"
                 id="pro_price"
                 min={0}
-                max={1000}
+                max={10000}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);
                 }}
@@ -177,12 +181,6 @@ const Products = () => {
 
       </div>
       <div className={okay ? 'newright' : 'right'}>
-        <img
-          className="catImg"
-          src="https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt=""
-          srcSet=""
-        />
         <List catId={catId} maxPrice={maxPrice} sortPrice={sort} subCat={selectsubCat} />
         <div className="bottomButton">
           <button onClick={() => { setOkay(1) }}><FontAwesomeIcon icon={faFilter} /> Filters & Sort <FontAwesomeIcon icon={faBarsStaggered} /></button>
