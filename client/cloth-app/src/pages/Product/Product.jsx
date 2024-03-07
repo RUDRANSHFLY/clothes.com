@@ -52,11 +52,11 @@ const Product = () => {
 
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
-  const img = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img?.data?.attributes?.url;
-  const img2 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img2?.data?.attributes?.url;
-  const img3 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img3?.data?.attributes?.url;
-  const img4 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img4?.data?.attributes?.url;
-  const img5 = process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img5?.data?.attributes?.url;
+  const img = data?.attributes?.img?.data?.attributes?.url;
+  const img2 = data?.attributes?.img2?.data?.attributes?.url;
+  const img3 = data?.attributes?.img3?.data?.attributes?.url;
+  const img4 = data?.attributes?.img4?.data?.attributes?.url;
+  const img5 = data?.attributes?.img5?.data?.attributes?.url;
 
 
   return (
@@ -109,7 +109,7 @@ const Product = () => {
 
             </div>
             <div className="mainImg">
-              <img src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.[selectImg]?.data?.attributes?.url} alt="" srcSet="" />
+              <img src={data?.attributes?.[selectImg]?.data?.attributes?.url} alt="" srcSet="" />
             </div>
           </div>
           <div className="right">
