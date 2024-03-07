@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import {
-useEffect
+  useEffect
 } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-faArrowLeft,
-faArrowRight
+  faArrowLeft,
+  faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
 import "../Slider/Slider.scss";
 import "../Slider/SliderUtil.scss";
@@ -58,8 +58,9 @@ const Slider = () => {
 
 
 
+
   return (
-    <div className='slider' onMouseEnter={nextSlide}>
+    <div className='slider'>
       <div className='container' style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
         <img src={data[0]} />
         <img src={data[1]} />
