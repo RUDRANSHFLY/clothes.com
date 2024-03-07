@@ -1,93 +1,170 @@
-@media (min-width:1321px) {
-    .navbar .wrapper{
-        .humberger-menu{
-            display: none;
-        }
+// @media (min-width:1321px) {
+//     .navbar .wrapper{
+//         .humberger-menu{
+//             display: none;
+//         }
+//     }
+// }
+// .navbar{
+
+//     height: 70px;
+
+//     .wrapper{
+//         padding: 10px 30px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+
+//         .item{
+//             display: flex;
+//             align-items: center;
+//             font-size: 18px;
+//             letter-spacing: 2px;
+//         }
+//         .left{
+//             display: flex;
+//             align-items: center;
+//             gap: 25px;
+
+//             .item .auth{
+//                 width: 120px;
+//                 font-size: 1.2rem;
+//                 padding: 10px;
+//                 background-color: black;
+//                 color: white;
+//                 cursor: pointer;
+
+//             }
+//         }
+//         .center{
+//             font-size: 30px;
+//         }
+//         .right{
+//             display: flex;
+//             align-items: center;
+//             gap: 25px;
+
+//             .icons{
+//                 display: flex;
+//                 gap: 15px;
+//                 color: #777;
+//                 cursor: pointer;
+
+//                 .cartIcon{
+//                     position: relative;
+//                    .span{
+//                         font-size: 13px;
+//                         height: 20px;
+//                         width: 20px;
+//                         border-radius: 50%;
+//                         background-color: blue;
+//                         color: white;
+//                         position: absolute;
+//                         right: -10px;
+//                         top: -10px;
+//                         display: flex;
+//                         align-items: center;
+//                         justify-content: center;
+
+//                    }
+
+//                 }
+//             }
+//         }
+//     }
+
+// }
+
+// .resnav{
+//     display: none;
+// }
+// .item img{
+//     margin-right: 5px;
+// }
+
+// #curr{
+//     margin-right: 5px;
+// }
+
+@media (min-width: 1321px) {
+  .navbar .wrapper {
+    .humberger-menu {
+      display: none;
     }
+  }
 }
-.navbar{
-    
-    height: 70px;
-    
-   
-  
-    .wrapper{
-        padding: 10px 30px;
+.navbar {
+  height: 70px;
+
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      .item .auth {
+        width: 120px;
+        font-size: 1.2rem;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .center {
+      font-size: 30px;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      .icons {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        gap: 15px;
+        color: #777;
+        cursor: pointer;
 
-        .item{
+        .cartIcon {
+          position: relative;
+          .span {
+            font-size: 13px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: blue;
+            color: white;
+            position: absolute;
+            right: -10px;
+            top: -10px;
             display: flex;
             align-items: center;
-            font-size: 18px;
-            letter-spacing: 2px;
+            justify-content: center;
+          }
         }
-        .left{
-            display: flex;
-            align-items: center;
-            gap: 25px;
-
-            .item .auth{
-                width: 120px;
-                font-size: 1.2rem;
-                padding: 10px;
-                background-color: black;
-                color: white;
-                cursor: pointer;
-                
-            }
-        }
-        .center{
-            font-size: 30px;
-        }
-        .right{
-            display: flex;
-            align-items: center;
-            gap: 25px;
-
-            .icons{
-                display: flex;
-                gap: 15px;
-                color: #777;
-                cursor: pointer;
-                
-                .cartIcon{
-                    position: relative;
-                   .span{
-                        font-size: 13px;
-                        height: 20px;
-                        width: 20px;
-                        border-radius: 50%;
-                        background-color: blue;
-                        color: white;
-                        position: absolute;
-                        right: -10px;
-                        top: -10px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      
-                   }
-
-                }
-            }
-        }
+      }
     }
-
-
-
-
-
+  }
 }
 
-.resnav{
-    display: none;
+.resnav {
+  display: none;
 }
-.item img{
-    margin-right: 5px;
+.item img {
+  margin-right: 5px;
 }
 
-#curr{
-    margin-right: 5px;
+#curr {
+  margin-right: 5px;
 }
